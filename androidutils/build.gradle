@@ -9,10 +9,10 @@ def githubProperties = new Properties()
 //githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
 
 def getVersionName = { ->
-    return "1.0.0"  // Replace with version Name
+    return "1.0.4"  // Replace with version Name
 }
 def getArtificatId = { ->
-    return "sampleAndroidLib" // Replace with library name ID
+    return "androidutils" // Replace with library name ID
 }
 publishing {
     publications {
