@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MessagesActivity">
+<Button
+    android:id="@+id/show_toast_res"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="10dp"
+    android:text="Show Toast Res"
+    android:background="?colorPrimary"
+    android:textColor="@color/white_black"/>
+<Button
+    android:id="@+id/show_toast_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="10dp"
+    android:text="Show Toast Text"
+    android:background="?colorPrimary"
+    android:textColor="@color/white_black"/>
+<Button
+    android:id="@+id/show_message_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="10dp"
+    android:text="Show Message Text"
+    android:background="?colorPrimary"
+    android:textColor="@color/white_black"/>
+<Button
+    android:id="@+id/show_message_res"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:onClick="show_message_res"
+    android:layout_marginTop="10dp"
+    android:text="Show Message Resource"
+    android:background="?colorPrimary"
+    android:textColor="@color/white_black"/>
+    <Button
+        android:id="@+id/show_message_text_ask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:onClick="show_message_text_ask"
+        android:text="Show Message Text Select"
+        android:background="?colorPrimary"
+        android:textColor="@color/white_black"/>
+<Button
+    android:id="@+id/show_message_res_ask"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="10dp"
+    android:onClick="show_message_res_ask"
+    android:text="Show Message Resource Select"
+    android:background="?colorPrimary"
+    android:textColor="@color/white_black"/>
+    <Button
+        android:id="@+id/show_message_text_ask_not_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:onClick="show_message_text_ask_not_cancel"
+        android:text="Show Message Text Force Select"
+        android:background="?colorPrimary"
+        android:textColor="@color/white_black"/>
+<Button
+    android:id="@+id/show_message_res_ask_not_cancel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:onClick="show_message_res_ask_not_cancel"
+    android:layout_marginTop="10dp"
+    android:text="Show Message Resource Force Select"
+    android:background="?colorPrimary"
+    android:textColor="@color/white_black"/>
+<Button
+    android:id="@+id/show_message_res_ask_not_cancel_colored"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:onClick="show_message_res_ask_not_cancel_colored"
+    android:layout_marginTop="10dp"
+    android:text="Show Message Resource Force Select Colored"
+    android:background="?colorPrimary"
+    android:textColor="@color/white_black"/>
+</LinearLayout>

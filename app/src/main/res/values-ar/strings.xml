@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">مكتبتى</string>
+    <string name="action_settings">الظبط</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">الشاشة الاولى</string>
+    <string name="second_fragment_label"> الشاشة الثانية</string>
+    <string name="next">التالى</string>
+    <string name="previous">السابق</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="change_language">تغيير اللغة</string>
+    <string name="default_language">لغة الجهاز</string>
+</resources>

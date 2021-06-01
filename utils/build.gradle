@@ -1,0 +1,162 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'maven-publish'
+}
+def githubProperties = new Properties()
+//githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+
+def getVersionName = { ->
+    return "1.0.0"  // Replace with version Name
+}
+def getArtificatId = { ->
+    return "sampleAndroidLib" // Replace with library name ID
+}
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId 'com.islamassem.utils' // Replace with group ID
+            artifactId getArtificatId()
+            version getVersionName()
+            artifact("$buildDir/outputs/aar/${getArtificatId()}-release.aar")
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            /** Configure path of your package repository on Github
+             *  Replace GITHUB_USERID with your/organisation Github userID and REPOSITORY with the repository name on GitHub
+             */
+            url = uri("https://maven.pkg.github.com/GITHUB_USERID/REPOSITORY")
+
+            credentials {
+                /**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
+                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
+                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+            }
+        }
+    }
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+//    implementation 'androidx.multidex:multidex:2.0.1'
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation deps.kotlin.stdlib
+    implementation deps.kotlin.test
+//    implementation deps.kotlin.plugin
+//    implementation deps.kotlin.allopen
+    implementation deps.support.app_compat
+    implementation deps.support.preferences_ktx
+    implementation deps.support.design
+    implementation deps.support.core_v4
+    implementation deps.support.core_utils
+//    implementation deps.support.annotations
+    implementation deps.support.recyclerview
+    implementation deps.support.cardview
+    implementation deps.support.core_ktx
+    implementation deps.support.activity_ktx
+    implementation deps.constraint_layout
+    implementation deps.arch_core.runtime
+    implementation deps.arch_core.runtime
+    implementation deps.support.multi_dex
+    //------ RX ------//
+//    implementation deps.rx_android
+//    implementation deps.rxjava2
+//    implementation 'com.google.android.gms:play-services-location:17.1.0'
+    //------ firebase ------//
+//    implementation 'com.google.firebase:firebase-analytics:17.2.3'
+//    implementation 'com.google.firebase:firebase-messaging:20.1.1'
+//    implementation 'com.google.firebase:firebase-core:17.2.3'
+//    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+//    implementation 'com.google.firebase:firebase-database:19.2.1'
+//    implementation 'com.google.firebase:firebase-firestore:21.4.1'
+    //------ Room ------//
+//    implementation deps.room.runtime
+//    implementation deps.room.rxjava2
+//    implementation deps.room.testing
+//    kapt deps.room.compiler
+    //------ Room&Architecture Component Testing  ------//
+//    androidTestImplementation deps.room.testing
+//    androidTestImplementation deps.arch_core.testing
+
+    //------ Navigation --------//
+    implementation deps.navigation.runtime_ktx
+    implementation deps.navigation.fragment_ktx
+    implementation deps.navigation.ui_ktx
+
+
+    //------ Android Testing Support Library's runner and rules ------//
+//    androidTestImplementation deps.atsl.runner
+//    androidTestImplementation deps.atsl.rules
+
+
+    //------Espresso UI Testing ------//
+//    androidTestImplementation deps.espresso.core
+//    androidTestImplementation deps.espresso.contrib
+//    androidTestImplementation deps.espresso.intents
+
+
+    //butterknife
+//    implementation deps.butterknif.runtime
+//    kapt deps.butterknif.compiler
+
+//    ------retrofit ------//
+//    implementation deps.squareup.picasso
+//    implementation deps.squareup.retrofit2
+    implementation deps.squareup.googlegson
+//    implementation deps.squareup.converter
+//    implementation deps.squareup.okhttp
+//    implementation deps.squareup.interceptor
+//    implementation deps.squareup.rx
+//    implementation deps.squareup.urlconnection
+    //------Glide ------//
+    implementation deps.glide.runtime
+    kapt deps.glide.compiler
+    implementation 'com.google.android:flexbox:2.0.1'
+    def activity_version = ""
+
+    // Java language implementation
+//    implementation "androidx.activity:activity:$activity_version"
+    // Kotlin
+    implementation "androidx.activity:activity-ktx:$activity_version"
+//    implementation group: 'com.google.maps.android', name: 'android-maps-utils', version: '0.6.1'
+    implementation 'com.iceteck.silicompressorr:silicompressor:2.1'
+}
