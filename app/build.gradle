@@ -5,20 +5,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        debug {
-            storeFile file('/robatoia.jks')
-            storePassword 'Mahmoud@1985'
-            keyPassword 'Mahmoud@1985'
-            keyAlias 'HashCode'
-        }
-        release {
-            storeFile file('/robatoia.jks')
-            storePassword 'Mahmoud@1985'
-            keyPassword 'Mahmoud@1985'
-            keyAlias 'HashCode'
-        }
-    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
     defaultConfig {
@@ -34,10 +20,8 @@ android {
 
     buildTypes {
         debug{
-            signingConfig signingConfigs.debug
         }
         release {
-            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
